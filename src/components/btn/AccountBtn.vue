@@ -11,7 +11,9 @@
 	</div>
 
 	<login-btn v-if="!user.exists && !user.auth_ing"></login-btn>
-	<q-btn v-if="user.auth_ing" label="logining" rounded />
+	<div v-if="user.auth_ing">
+		<q-spinner color="primary" size="32px" />
+	</div>
 </template>
 
 <script setup lang="ts">
